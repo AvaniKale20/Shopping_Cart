@@ -25,5 +25,14 @@ public class ShoppingCartTest {
 
     }
 
+    @Test
+    void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceFourPointNineFive() {
+
+        ShoppingCart shoppingCart = new ShoppingCart("apple", 0.99, 5);
+
+        double applePrice = 0.99;
+        Assertions.assertEquals( 4.95, shoppingCart.totalPrice(applePrice));
+
+    }
 
 }
