@@ -8,7 +8,10 @@ sourceCompatibility = JavaVersion.VERSION_11
 repositories {
     mavenCentral()
 }
-
+test {
+    useJUnitPlatform()
+}
 dependencies {
     testCompile 'org.junit.jupiter:junit-jupiter:5.4.1'
+    testCompile 'org.assertj:assertj-core:1.0.0'
 }
