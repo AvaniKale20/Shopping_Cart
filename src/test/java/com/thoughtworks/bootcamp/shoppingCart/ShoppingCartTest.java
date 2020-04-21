@@ -8,7 +8,8 @@ public class ShoppingCartTest {
 
     @Test
     void givenEmptyShoppingCart_whenAddOneApple_thenShouldReturnOneApplePrice() {
-        ShoppingCart cart = new ShoppingCart("apple", 0.99, 1);
+        Item item = new Item("apple", 0.99, 1);
+        ShoppingCart cart = new ShoppingCart(item);
         double oneApplePrice = 0.99;
 
         Assertions.assertEquals(0.99, cart.totalPrice(oneApplePrice));
@@ -17,8 +18,8 @@ public class ShoppingCartTest {
 
     @Test
     void givenShoppingCart_whenAppleQuantityIsTwo_thenShouldReturnPriceOnePointNineEight() {
-
-        ShoppingCart shoppingCart = new ShoppingCart("apple", 0.99, 2);
+        Item item = new Item("apple", 0.99, 2);
+        ShoppingCart shoppingCart = new ShoppingCart(item);
 
         double applePrice = 0.99;
         Assertions.assertEquals(1.98, shoppingCart.totalPrice(applePrice));
@@ -28,10 +29,20 @@ public class ShoppingCartTest {
     @Test
     void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceFourPointNineFive() {
 
-        ShoppingCart shoppingCart = new ShoppingCart("apple", 0.99, 5);
+        Item item = new Item("apple", 0.99, 5);
+        ShoppingCart shoppingCart=new ShoppingCart(item);
 
         double applePrice = 0.99;
-        Assertions.assertEquals( 4.95, shoppingCart.totalPrice(applePrice));
+        Assertions.assertEquals(4.95, shoppingCart.totalPrice(applePrice));
+
+    }
+
+    @Test
+    void givenShoppingCart_whenAddedOneSecondItem_thenShouldReturnOneQuantityOfThatItem() {
+
+        Item item = new Item("Mask", 1.99, 1);
+
+        Assertions.assertEquals(1, item.getQuantity());
 
     }
 
