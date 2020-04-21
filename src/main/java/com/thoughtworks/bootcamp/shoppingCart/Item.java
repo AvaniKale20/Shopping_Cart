@@ -14,4 +14,8 @@ public class Item {
     public double getQuantity() {
         return quantity;
     }
+
+    public double getPrice() {
+        return price;
+    }
 }

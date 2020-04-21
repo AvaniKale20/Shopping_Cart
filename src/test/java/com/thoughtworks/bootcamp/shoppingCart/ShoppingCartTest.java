@@ -30,7 +30,7 @@ public class ShoppingCartTest {
     void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceFourPointNineFive() {
 
         Item item = new Item("apple", 0.99, 5);
-        ShoppingCart shoppingCart=new ShoppingCart(item);
+        ShoppingCart shoppingCart = new ShoppingCart(item);
 
         double applePrice = 0.99;
         Assertions.assertEquals(4.95, shoppingCart.totalPrice(applePrice));
@@ -46,4 +46,12 @@ public class ShoppingCartTest {
 
     }
 
+    @Test
+    void givenShoppingCart_whenAddedOneSecondItem_thenShouldReturnPriceOnePointNineNine() {
+
+        Item item = new Item("Mask", 1.99, 1);
+
+        Assertions.assertEquals(1.99, item.getPrice());
+
+    }
 }
