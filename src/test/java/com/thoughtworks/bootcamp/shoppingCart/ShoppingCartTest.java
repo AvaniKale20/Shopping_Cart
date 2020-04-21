@@ -74,14 +74,14 @@ public class ShoppingCartTest {
     }
 
     @Test
-    void givenShoppingCart_whenAddThreeMaskItem_thenShouldReturnPriceFivePointNineSeven() {
+    void givenShoppingCart_whenAddThreeMaskItemWithTax_thenShouldReturnPriceSixPointZeroNine() {
         Item itemOne = new Item("Mask", 1.99, 3);
 
         ArrayList<Item> listOfItems = new ArrayList<>();
         listOfItems.add(itemOne);
 
         Map<List<Item>, Double> map = new HashMap<>();
-        map.put(listOfItems, 5.97);
+        map.put(listOfItems, 6.09);
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
@@ -90,7 +90,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    void givenShoppingCart_whenAddingOneMaskAndOneApple_thenShouldReturnTotalPriceOfTwoDifferentItemIsThreePointZeroFour() {
+    void givenShoppingCart_whenSellingOneMaskAndOneAppleWithTax_thenShouldReturnTotalPriceOfTwoDifferentItemIsThreePointZeroFour() {
 
         Item itemOne = new Item("Apple", 0.99, 1);
         Item itemTwo = new Item("Mask", 1.99, 1);
