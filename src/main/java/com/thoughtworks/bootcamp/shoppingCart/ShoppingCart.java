@@ -1,25 +1,17 @@
 package com.thoughtworks.bootcamp.shoppingCart;
 
-import java.util.ArrayList;
-
 public class ShoppingCart {
-    private ArrayList<Item> items;
-
-    public ShoppingCart(ArrayList<Item> items) {
-        this.items = items;
-    }
 
     public ShoppingCart() {
 
     }
 
 
-    public double totalPrice(Item item) {
-        double totalPrice = 0;
-        for (int i = 0; i < item.size(); i++) {
-            totalPrice = totalPrice + (item.get(i).getPrice() * item.get(i).getQuantity());
-        }
-        return Math.round(totalPrice * 100.0) / 100.0;
+    public Item totalPrice(Item newItem) {
+        double priceOfEachItem = 0;
+        priceOfEachItem = priceOfEachItem + (newItem.getPrice() * newItem.getQuantity());
+        priceOfEachItem = Math.round(priceOfEachItem * 100.0) / 100.0;
+        return new Item(newItem.getItemName(), priceOfEachItem, newItem.getQuantity());
     }
 
 }

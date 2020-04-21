@@ -3,9 +3,6 @@ package com.thoughtworks.bootcamp.shoppingCart;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-
 public class ShoppingCartTest {
 
     @Test
@@ -14,7 +11,7 @@ public class ShoppingCartTest {
 
         ShoppingCart cart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple",0.99,1), cart.totalPrice(itemOne));
+        Assertions.assertEquals(new Item("apple", 0.99, 1), cart.totalPrice(itemOne));
 
     }
 }
