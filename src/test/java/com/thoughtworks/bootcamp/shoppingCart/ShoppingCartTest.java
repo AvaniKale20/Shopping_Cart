@@ -3,6 +3,11 @@ package com.thoughtworks.bootcamp.shoppingCart;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ShoppingCartTest {
 
     @Test
@@ -44,6 +49,7 @@ public class ShoppingCartTest {
         Assertions.assertEquals(new Item("Mask", 1.99, 1), shoppingCart.add(itemOne));
 
     }
+
     @Test
     void givenShoppingCart_whenAddThreeMaskItem_thenShouldReturnPriceFivePointNineSeven() {
         Item itemOne = new Item("Mask", 1.99, 3);
@@ -52,5 +58,23 @@ public class ShoppingCartTest {
 
         Assertions.assertEquals(new Item("Mask", 5.97, 3), shoppingCart.add(itemOne));
 
+    }
+
+    @Test
+    void givenShoppingCart_whenAddingOneMaskAndOneApple_thenShouldReturnTotalPriceOfTwoDifferentItemIsTwoPointNineEight() {
+
+        Item itemOne = new Item("Apple", 0.99, 1);
+        Item itemTwo = new Item("Mask", 1.99, 1);
+
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+        listOfItems.add(itemTwo);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 2.98);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
     }
 }

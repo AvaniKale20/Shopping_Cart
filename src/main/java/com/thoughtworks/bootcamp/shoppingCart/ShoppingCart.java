@@ -1,5 +1,7 @@
 package com.thoughtworks.bootcamp.shoppingCart;
 
+import java.util.ArrayList;
+
 public class ShoppingCart {
 
     public ShoppingCart() {
@@ -7,7 +9,7 @@ public class ShoppingCart {
     }
 
 
-    public Item add(Item newItem) {
+    public Item add(ArrayList<Item> newItem) {
         double priceOfEachItem = 0;
         priceOfEachItem = priceOfEachItem + (newItem.getPrice() * newItem.getQuantity());
         priceOfEachItem = Math.round(priceOfEachItem * 100.0) / 100.0;
