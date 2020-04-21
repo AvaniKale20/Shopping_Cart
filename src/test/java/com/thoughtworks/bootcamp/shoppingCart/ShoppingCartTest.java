@@ -13,20 +13,30 @@ public class ShoppingCartTest {
     @Test
     void givenEmptyShoppingCart_whenAddOneApple_thenShouldReturnOneApplePrice() {
         Item itemOne = new Item("apple", 0.99, 1);
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 0.99);
 
         ShoppingCart cart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 0.99, 1), cart.add(itemOne));
+        Assertions.assertEquals(map, cart.add(listOfItems));
 
     }
 
     @Test
     void givenShoppingCart_whenAppleQuantityIsTwo_thenShouldReturnPriceOnePointNineEight() {
         Item itemOne = new Item("apple", 0.99, 2);
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 0.99);
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 1.98, 2), shoppingCart.add(itemOne));
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
 
     }
 
@@ -34,9 +44,16 @@ public class ShoppingCartTest {
     void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceOnePointNineEight() {
         Item itemOne = new Item("apple", 0.99, 5);
 
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 4.95);
+
+
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 4.95, 5), shoppingCart.add(itemOne));
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
 
     }
 
@@ -44,9 +61,15 @@ public class ShoppingCartTest {
     void givenShoppingCart_whenAddOneMaskItem_thenShouldReturnPriceOnePointNineNine() {
         Item itemOne = new Item("Mask", 1.99, 1);
 
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 1.99);
+
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("Mask", 1.99, 1), shoppingCart.add(itemOne));
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
 
     }
 
@@ -54,9 +77,15 @@ public class ShoppingCartTest {
     void givenShoppingCart_whenAddThreeMaskItem_thenShouldReturnPriceFivePointNineSeven() {
         Item itemOne = new Item("Mask", 1.99, 3);
 
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 5.97);
+
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("Mask", 5.97, 3), shoppingCart.add(itemOne));
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
 
     }
 

@@ -1,6 +1,9 @@
 package com.thoughtworks.bootcamp.shoppingCart;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ShoppingCart {
 
@@ -9,11 +12,23 @@ public class ShoppingCart {
     }
 
 
-    public Item add(ArrayList<Item> newItem) {
-        double priceOfEachItem = 0;
-        priceOfEachItem = priceOfEachItem + (newItem.getPrice() * newItem.getQuantity());
-        priceOfEachItem = Math.round(priceOfEachItem * 100.0) / 100.0;
-        return new Item(newItem.getItemName(), priceOfEachItem, newItem.getQuantity());
+    double priceOfItem = 0;
+    List<Item> shoppingCartTotalPriceList = new ArrayList<>();
+    double totalPriceOfAllItem = 0;
+    Map<List<Item>, Double> map = new HashMap<>();
+
+    public Map<List<Item>, Double> add(ArrayList<Item> newItemList) {
+        for (int i = 0; i < newItemList.size(); i++) {
+            double priceOfEachItem = 0;
+            priceOfEachItem = priceOfEachItem + (newItemList.get(i).getPrice() * newItemList.get(i).getQuantity());
+            priceOfItem = Math.round(priceOfEachItem * 100.0) / 100.0;
+
+            shoppingCartTotalPriceList.add(new Item(newItemList.get(i).getItemName(), newItemList.get(i).getPrice(), newItemList.get(i).getQuantity()));
+
+            totalPriceOfAllItem = totalPriceOfAllItem + priceOfItem;
+        }
+        map.put(shoppingCartTotalPriceList, totalPriceOfAllItem);
+        return map;
     }
 
 }

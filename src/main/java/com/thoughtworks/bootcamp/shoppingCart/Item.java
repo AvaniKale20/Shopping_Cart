@@ -36,6 +36,11 @@ public class Item {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(itemName, price, quantity);
+    }
+
+    @Override
     public String toString() {
         return "Item{" +
                 "itemName='" + itemName + '\'' +
