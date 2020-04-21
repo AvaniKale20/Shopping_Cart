@@ -14,7 +14,7 @@ public class ShoppingCart {
         for (int i = 0; i < items.size(); i++) {
             totalPrice = totalPrice + (items.get(i).getPrice() * items.get(i).getQuantity());
         }
-        return totalPrice;
+        return  Math.round(totalPrice*100.0)/100.0;
 
     }
 }
