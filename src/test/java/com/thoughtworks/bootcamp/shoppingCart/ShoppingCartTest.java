@@ -44,4 +44,13 @@ public class ShoppingCartTest {
         Assertions.assertEquals(new Item("Mask", 1.99, 1), shoppingCart.add(itemOne));
 
     }
+    @Test
+    void givenShoppingCart_whenAddThreeMaskItem_thenShouldReturnPriceFivePointNineSeven() {
+        Item itemOne = new Item("Mask", 1.99, 3);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(new Item("Mask", 5.97, 3), shoppingCart.add(itemOne));
+
+    }
 }
