@@ -144,7 +144,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    void givenShoppingCart_whenSellingThreeMaskAndThreeAppleWithSalesTax_thenShouldReturnTotalPriceNinePointOneTwo() {
+    void givenShoppingCart_whenSellingThreeMaskAndThreeAppleWithIntrest_thenShouldReturnTotalPriceNinePointOneTwo() {
 
         Item itemOne = new Item("Apple", 0.99, 3);
         Item itemTwo = new Item("Mask", 1.99, 3);
