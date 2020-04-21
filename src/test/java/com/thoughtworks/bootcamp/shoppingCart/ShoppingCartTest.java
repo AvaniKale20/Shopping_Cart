@@ -11,7 +11,7 @@ public class ShoppingCartTest {
 
         ShoppingCart cart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 0.99, 1), cart.totalPrice(itemOne));
+        Assertions.assertEquals(new Item("apple", 0.99, 1), cart.add(itemOne));
 
     }
 
@@ -21,16 +21,17 @@ public class ShoppingCartTest {
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 1.98, 2), shoppingCart.totalPrice(itemOne));
+        Assertions.assertEquals(new Item("apple", 1.98, 2), shoppingCart.add(itemOne));
 
     }
+
     @Test
     void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceOnePointNineEight() {
         Item itemOne = new Item("apple", 0.99, 5);
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Assertions.assertEquals(new Item("apple", 4.95, 5), shoppingCart.totalPrice(itemOne));
+        Assertions.assertEquals(new Item("apple", 4.95, 5), shoppingCart.add(itemOne));
 
     }
 }

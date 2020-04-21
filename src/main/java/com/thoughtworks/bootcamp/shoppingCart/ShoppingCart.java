@@ -7,7 +7,7 @@ public class ShoppingCart {
     }
 
 
-    public Item totalPrice(Item newItem) {
+    public Item add(Item newItem) {
         double priceOfEachItem = 0;
         priceOfEachItem = priceOfEachItem + (newItem.getPrice() * newItem.getQuantity());
         priceOfEachItem = Math.round(priceOfEachItem * 100.0) / 100.0;
