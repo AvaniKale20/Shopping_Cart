@@ -9,7 +9,12 @@ public class ShoppingCart {
         this.items = items;
     }
 
-    public double totalPrice(ArrayList<Item> item) {
+    public ShoppingCart() {
+
+    }
+
+
+    public double totalPrice(Item item) {
         double totalPrice = 0;
         for (int i = 0; i < item.size(); i++) {
             totalPrice = totalPrice + (item.get(i).getPrice() * item.get(i).getQuantity());

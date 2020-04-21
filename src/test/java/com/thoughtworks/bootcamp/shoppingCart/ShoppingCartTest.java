@@ -11,11 +11,10 @@ public class ShoppingCartTest {
     @Test
     void givenEmptyShoppingCart_whenAddOneApple_thenShouldReturnOneApplePrice() {
         Item itemOne = new Item("apple", 0.99, 1);
-        ArrayList<Item> listOfItems = new ArrayList<>();
-        listOfItems.add(itemOne);
-        ShoppingCart cart = new ShoppingCart(listOfItems);
 
-        Assertions.assertEquals(0.99, cart.totalPrice(listOfItems));
+        ShoppingCart cart = new ShoppingCart();
+
+        Assertions.assertEquals(new Item("apple",0.99,1), cart.totalPrice(itemOne));
 
     }
 }
