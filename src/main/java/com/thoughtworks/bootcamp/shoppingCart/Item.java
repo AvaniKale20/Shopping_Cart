@@ -13,10 +13,6 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public Item() {
-
-    }
-
     public String getItemName() {
         return itemName;
     }
@@ -28,21 +24,16 @@ public class Item {
     public double getPrice() {
         return price;
     }
-//
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Item item = (Item) o;
-//        return Double.compare(item.price, price) == 0 &&
-//                quantity == item.quantity &&
-//                Objects.equals(itemName, item.itemName);
-//    }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(itemName, price, quantity);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Double.compare(item.price, price) == 0 &&
+                quantity == item.quantity &&
+                Objects.equals(itemName, item.itemName);
+    }
 
     @Override
     public String toString() {
