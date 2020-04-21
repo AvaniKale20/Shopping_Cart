@@ -24,4 +24,13 @@ public class ShoppingCartTest {
         Assertions.assertEquals(new Item("apple", 1.98, 2), shoppingCart.totalPrice(itemOne));
 
     }
+    @Test
+    void givenShoppingCart_whenAppleQuantityIsFive_thenShouldReturnPriceOnePointNineEight() {
+        Item itemOne = new Item("apple", 0.99, 5);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(new Item("apple", 4.95, 5), shoppingCart.totalPrice(itemOne));
+
+    }
 }
