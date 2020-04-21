@@ -54,4 +54,14 @@ public class ShoppingCartTest {
         Assertions.assertEquals(1.99, item.getPrice());
 
     }
+
+    @Test
+    void givenShoppingCart_whenMaskQuantityIsTwo_thenShouldReturnPriceThreePointNineEight() {
+
+        Item item = new Item("Mask", 1.99, 2);
+        ShoppingCart cart = new ShoppingCart(item);
+
+        Assertions.assertEquals(3.98, cart.totalPrice(1.99));
+
+    }
 }
