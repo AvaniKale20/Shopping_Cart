@@ -9,12 +9,12 @@ public class ShoppingCart {
         this.items = items;
     }
 
-    public double totalPrice() {
+    public double totalPrice(ArrayList<Item> item) {
         double totalPrice = 0;
-        for (int i = 0; i < items.size(); i++) {
-            totalPrice = totalPrice + (items.get(i).getPrice() * items.get(i).getQuantity());
+        for (int i = 0; i < item.size(); i++) {
+            totalPrice = totalPrice + (item.get(i).getPrice() * item.get(i).getQuantity());
         }
-        return  Math.round(totalPrice*100.0)/100.0;
-
+        return Math.round(totalPrice * 100.0) / 100.0;
     }
+
 }
