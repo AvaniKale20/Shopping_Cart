@@ -106,4 +106,22 @@ public class ShoppingCartTest {
 
         Assertions.assertEquals(map, shoppingCart.add(listOfItems));
     }
+
+    @Test
+    void givenShoppingCart_whenAddingOneMaskAndTwoApple_thenShouldReturnTotalPriceOfTwoDifferentItemIsThreePointNineSeven() {
+
+        Item itemOne = new Item("Apple", 0.99, 2);
+        Item itemTwo = new Item("Mask", 1.99, 1);
+
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+        listOfItems.add(itemTwo);
+
+        Map<List<Item>, Double> map = new HashMap<>();
+        map.put(listOfItems, 3.97);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(map, shoppingCart.add(listOfItems));
+    }
 }

@@ -25,7 +25,7 @@ public class ShoppingCart {
 
             shoppingCartTotalPriceList.add(new Item(newItemList.get(i).getItemName(), newItemList.get(i).getPrice(), newItemList.get(i).getQuantity()));
 
-            totalPriceOfAllItem = totalPriceOfAllItem + priceOfItem;
+            totalPriceOfAllItem = Math.round((totalPriceOfAllItem + priceOfItem)* 100.0)/ 100.0;
         }
         map.put(shoppingCartTotalPriceList, totalPriceOfAllItem);
         return map;
