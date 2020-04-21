@@ -107,4 +107,19 @@ public class ShoppingCartTest {
         Assertions.assertEquals(3.97, cart.totalPrice());
 
     }
+
+    @Test
+    void givenShoppingCart_whenSellingThreeMaskAndThreeApple_thenShouldReturnTotalPriceOfTwoDifferentItemIsTwoPointNineEight() {
+
+        Item itemOne = new Item("Apple", 0.99, 3);
+        Item itemTwo = new Item("Mask", 1.99, 3);
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(itemOne);
+        listOfItems.add(itemTwo);
+
+        ShoppingCart cart = new ShoppingCart(listOfItems);
+
+        Assertions.assertEquals(8.94, cart.totalPrice());
+
+    }
 }
