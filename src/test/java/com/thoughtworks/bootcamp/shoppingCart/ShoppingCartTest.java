@@ -136,7 +136,7 @@ public class ShoppingCartTest {
         listOfItems.add(itemTwo);
 
         Map<List<Item>, Double> map = new HashMap<>();
-        map.put(listOfItems, 8.94);
+        map.put(listOfItems, 9.12);
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
