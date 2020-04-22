@@ -29,7 +29,7 @@ public class ShoppingCart {
 
             totalPriceOfAllItem = Math.round((totalPriceOfAllItem + priceOfItem) * 100.0) / 100.0;
             double tax = salesTax();
-            totalPriceWithInterest =totalPriceOfAllItem + tax;
+            totalPriceWithInterest = totalPriceOfAllItem + tax;
         }
         map.put(shoppingCartTotalPriceList, totalPriceWithInterest);
         return map;
@@ -39,5 +39,8 @@ public class ShoppingCart {
         double result = 0;
         result = (totalPriceOfAllItem * 2) / 100;
         return Math.round(result * 100.0) / 100.0;
+    }
+
+    public Item addWithSpecialOffer(ArrayList<Item> listOfItems) {
     }
 }

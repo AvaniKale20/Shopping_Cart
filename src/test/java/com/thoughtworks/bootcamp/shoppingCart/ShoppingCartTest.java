@@ -11,13 +11,13 @@ import java.util.Map;
 public class ShoppingCartTest {
 
     @Test
-    void givenEmptyShoppingCart_whenAddOneApple_thenShouldReturnOneApplePrice() {
+    void givenEmptyShoppingCart_whenAddOneAppleWithTax_thenShouldReturnOnePointOne() {
         Item itemOne = new Item("apple", 0.99, 1);
         ArrayList<Item> listOfItems = new ArrayList<>();
         listOfItems.add(itemOne);
 
         Map<List<Item>, Double> map = new HashMap<>();
-        map.put(listOfItems, 0.99);
+        map.put(listOfItems, 1.01);
 
         ShoppingCart cart = new ShoppingCart();
 
@@ -26,13 +26,13 @@ public class ShoppingCartTest {
     }
 
     @Test
-    void givenShoppingCart_whenAppleQuantityIsTwo_thenShouldReturnPriceOnePointNineEight() {
+    void givenShoppingCart_whenAppleQuantityIsTwo_thenShouldReturnPriceTwoPointZeroTwo() {
         Item itemOne = new Item("apple", 0.99, 2);
         ArrayList<Item> listOfItems = new ArrayList<>();
         listOfItems.add(itemOne);
 
         Map<List<Item>, Double> map = new HashMap<>();
-        map.put(listOfItems, 0.99);
+        map.put(listOfItems, 2.02);
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
@@ -162,4 +162,17 @@ public class ShoppingCartTest {
         Assertions.assertEquals(map, shoppingCart.add(listOfItems));
     }
 
+    @Test
+    void givenShoppingCart_whenSellingTwoAppleWithOfferBuyTwoGetThreeFree_thenShouldReturnObjectWithFiveQuantity() {
+        Item apple = new Item("Apple", 0.99, 2);
+        Item freeApple = new Item("Apple", 0.99, 3);
+
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(apple);
+        listOfItems.add(freeApple);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(new Item("Apple", 0.99, 5), shoppingCart.addWithSpecialOffer(listOfItems));
+    }
 }
