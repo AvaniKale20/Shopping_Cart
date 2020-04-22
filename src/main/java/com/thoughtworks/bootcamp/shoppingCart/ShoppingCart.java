@@ -42,5 +42,13 @@ public class ShoppingCart {
     }
 
     public Item addWithSpecialOffer(ArrayList<Item> listOfItems) {
+        Item newItem = null;
+        int totalQuantity = 0;
+        for (int i = 0; i < listOfItems.size(); i++) {
+            totalQuantity = totalQuantity + listOfItems.get(i).getQuantity();
+            newItem = new Item(listOfItems.get(i).getItemName(), listOfItems.get(i).getPrice(), totalQuantity);
+        }
+        return newItem;
     }
+
 }
