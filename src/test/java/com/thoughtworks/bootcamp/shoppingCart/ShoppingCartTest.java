@@ -175,4 +175,21 @@ public class ShoppingCartTest {
 
         Assertions.assertEquals(new Item("Apple", 0.99, 5), shoppingCart.addWithSpecialOffer(listOfItems));
     }
+
+    @Test
+    void givenShoppingCart_whenSellingTwoAppleWithOfferBuyTwoGetThreeFreeAndThreeMask_thenShouldNotAddQuantityOfMaskInAppleItem() {
+        Item apple = new Item("Apple", 0.99, 2);
+        Item freeApple = new Item("Apple", 0.99, 3);
+        Item mask = new Item("Mask", 1.99, 1);
+
+        ArrayList<Item> listOfItems = new ArrayList<>();
+        listOfItems.add(apple);
+        listOfItems.add(freeApple);
+        listOfItems.add(mask);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Assertions.assertEquals(new Item("Apple", 0.99, 5), shoppingCart.addWithSpecialOffer(listOfItems));
+        Assertions.assertEquals(new Item("Mask", 1.99, 1), shoppingCart.addWithSpecialOffer(listOfItems));
+    }
 }
